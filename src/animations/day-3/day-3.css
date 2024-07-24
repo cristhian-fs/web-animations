@@ -1,0 +1,59 @@
+.custom-cursor {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  border: 0;
+  background: #3b82f6;
+  color: #fff;
+  position: fixed;
+  z-index: 26;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: width 0.4s cubic-bezier(0.36, 0, 0.66, 0),
+    height 0.4s cubic-bezier(0.36, 0, 0.66, 0);
+  top: 50%;
+  left: 50%;
+  will-change: transform, width, height;
+}
+
+.custom-cursor.active {
+  width: 80px;
+  height: 80px;
+  transition: width 0.4s cubic-bezier(0.34, 1, 0.64, 1),
+    height 0.4s cubic-bezier(0.34, 1, 0.64, 1);
+}
+
+.project-image {
+  width: 0;
+  z-index: 25;
+  position: fixed;
+  pointer-events: none;
+  transform: translate(-50%, -52%);
+  display: block;
+  left: 55%;
+  overflow: hidden;
+  transition: width 0.4s cubic-bezier(0.36, 0, 0.66, 0),
+    height 0.4s cubic-bezier(0.36, 0, 0.66, 0);
+  top: 50%;
+  height: 0;
+  will-change: transform, width, height;
+}
+
+.project-image.active {
+  border-radius: 0;
+  width: clamp(7em, 20vw, 25em);
+  transition: width 0.4s cubic-bezier(0.34, 1, 0.64, 1),
+    height 0.4s cubic-bezier(0.34, 1, 0.64, 1);
+  height: 320px;
+}

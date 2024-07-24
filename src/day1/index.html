@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../style.css">
+  <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+  <title>Docs | Github</title>
+
+  <script src="../js/svg-inject.min.js"></script>
+</head>
+
+<body class="bg-black selection:bg-amber-600 selection:text-black">
+
+  <header class="w-full h-[--header-height] bg-black fixed top-0 left-0 flex items-center z-50 border-b border-white/10" style="--header-height: 80px">
+    <!-- inner wrapper -->
+    <div class="max-w-screen-xl w-full py-4 px-8 flex items-center justify-between mx-auto">
+      <!-- logo -->
+      <div class="text-2xl font-semibold text-white">Web Animations</div>
+      <div class="text-2xl font-semibold text-white">Menu</div>
+    </div>
+  </header>
+
+  <main class="w-full min-h-screen bg-black border-b border-white/10 relative">
+    <div class="max-w-screen-xl mx-auto mt-[--header-height] border-r border-l border-white/10 flex items-start justify-start gap-0" style="--header-height: 80px">
+      <div class="w-full shrink-0 max-w-56 sticky top-[--header-height] left-0 hidden lg:flex flex-col items-start space-y-4 py-4 px-6" style="--header-height: 80px" id="doc-links-wrapper">
+
+      </div>
+      <div class="w-full min-h-screen border-l border-r border-white/10 flex flex-col items-start">
+        <div class="w-full py-8 px-8 flex-col flex" id="doc-content-wrapper">
+          <h1 class="text-3xl md:text-6xl tracking-tight font-semibold text-white text-pretty">
+            Animação dia 01
+          </h1>
+          <p class="mt-6 text-xl font-medium tracking-tight text-white">Contador de números animado</p>
+          <!-- ANIMATION DIV -->
+          <div class="w-full flex items-center justify-center flex-col gap-8 px-4 py-10 bg-black border rounded-lg border-white/10 mt-5">
+            <div class="flex justify-center items-center gap-8" id="buttons">
+              <button class="flex h-14 w-14 items-center justify-center rounded-full bg-zinc-800 text-xl text-zinc-200 active:scale-90" id="decrease">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                </svg>
+              </button>
+              <div class="flex items-center justify-center" id="counter">
+                <span class="text-5xl text-semibold text-zinc-100" id="leftNumber">0</span>
+                <span class="text-5xl text-semibold text-zinc-100" id="rightNumber">0</span>
+              </div>
+              <button class="flex h-14 w-14 items-center justify-center rounded-full bg-zinc-800 text-xl text-zinc-200 active:scale-90" id="increase">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                </svg>
+              </button>
+            </div>
+            <p class="text-lg leading-6 text-zinc-300">O número máximo é 20</p>
+          </div>
+          <h2 id="objetivo" class="text-2xl md:text-5xl tracking-tight font-semibold text-white mt-12">Objetivo</h2>
+          <p class="text-zinc-300 text-base leading-relaxed mt-6 mb-4">
+            O objetivo aqui era criar uma animação de um contador de números. A cada vez que o usuário pressiona em alguns dos botões, o número aumenta ou diminui, baseado na ação do botão, de maneira animada e dinâmica. Mudando a direção dependendo da animação, sendo ela de cima para baixo ou de baixo para cima.
+          </p>
+
+          <h2 id="desafio" class="text-2xl md:text-5xl tracking-tight font-semibold text-white mt-12">O desafio</h2>
+          <p class="text-zinc-300 text-base leading-relaxed mt-6 mb-4">
+            A principio, essa animação não deveria ser mais complexo que fazer os números sairem de cima para baixo. Então, um trecho de código como esse já resolveria completamente o primeiro desafio da animação:
+          </p>
+          <div class="max-w-full rounded-lg bg-zinc-950 border border-white/10 max-h-[400px] overflow-auto" data-code-navigation="01">
+            <div class="flex items-center justify-start bg-black border-b border-white/10">
+              <button type="button" data-active="true" data-typecode="html" class="data-[active=true]:text-blue-500 text-zinc-300 border-b border-transparent data-[active=true]:border-blue-500 px-3 py-1.5 group">
+                <span class="px-1 py-0.5 rounded-md group-data-[active=false]:hover:bg-white/10">HTML</span>
+              </button>
+              <button type="button" data-active="false" data-typecode="javascript" class="data-[active=true]:text-blue-500 text-zinc-300 border-b border-transparent data-[active=true]:border-blue-500 px-3 py-1.5 group">
+                <span class="px-1 py-0.5 rounded-md group-data-[active=false]:hover:bg-white/10">Javascript</span>
+              </button>
+            </div>
+            <pre data-code="html" class="text-sm">
+              <code class="hljs max-w-full m-0 "></code>
+            </pre>
+            <pre data-code="javascript" class="text-sm">
+              <code class="hljs max-w-full m-0 "></code>
+            </pre>
+          </div>
+          <p class="text-zinc-300 text-base leading-relaxed mt-6 mb-4">
+            Mas como todo bom e velho ascensor a front-end, eu queria que a animação funcionasse de maneira dinâmica na qual os números a serem animados iriam ser só o das unidades.
+          </p>
+          <p class="text-zinc-300 text-base leading-relaxed my-3">
+            Assim como <a href="https://x.com/alisamadi__/status/1808697530303271369" target="_blank" class="text-blue-500">nesse exemplo</a> que eu encontrei no twitter. Inclusive, créditos ao criador do efeito pela ideia.
+          </p>
+          <h2 id="abordagem" class="text-2xl md:text-5xl tracking-tight font-semibold text-white mt-12">Abordagem escolhida</h2>
+          <p class="text-zinc-300 text-base leading-relaxed mt-6 mb-4">
+            Pra chegar no efeito esperado, eu precisei mudar a abordagem e criar um número separado que funcionaria para as demais unidades(milhar, centena, dezena). Quando o número da unidade aumenta a ponto de chegar em 9, o número da dezena aumenta e assim por diante.
+          </p>
+          <div class="max-w-full rounded-lg bg-zinc-950 border border-white/10 max-h-[400px] overflow-auto" data-code-navigation="02">
+            <div class="flex items-center justify-start bg-black border-b border-white/10">
+              <button type="button" data-active="true" data-typecode="html" class="data-[active=true]:text-blue-500 text-zinc-300 border-b border-transparent data-[active=true]:border-blue-500 px-3 py-1.5 group">
+                <span class="px-1 py-0.5 rounded-md group-data-[active=false]:hover:bg-white/10">HTML</span>
+              </button>
+              <button type="button" data-active="false" data-typecode="javascript" class="data-[active=true]:text-blue-500 text-zinc-300 border-b border-transparent data-[active=true]:border-blue-500 px-3 py-1.5 group">
+                <span class="px-1 py-0.5 rounded-md group-data-[active=false]:hover:bg-white/10">Javascript</span>
+              </button>
+            </div>
+            <pre data-code="html" class="text-sm">
+              <code class="hljs max-w-full m-0 "></code>
+            </pre>
+            <pre data-code="javascript" class="text-sm">
+              <code class="hljs max-w-full m-0 "></code>
+            </pre>
+          </div>
+          <p class="text-white text-lg md:text-xl leading-relaxed mt-8">Limitações</p>
+          <ul class="list-disc px-4 text-zinc-300 text-base leading-relaxed mt-3">
+            <li>As animações funcionam apenas para adições de 1 em 1. <span class=" bg-white/10 p-1 rounded-md">Em aprimoramento</span></li>
+          </ul>
+        </div>
+        <a href="/day2" class="w-full">
+          <button class="w-full px-8 py-16 flex flex-col gap-2 border-t border-b border-white/10" id="next-btn">
+            <div class="flex items-center justify-center max-w-fit text-zinc-300 gap-2">
+              <p class="text-base leading-relaxed">Próximo</p>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+              </svg>
+            </div>
+            <p class="text-xl md:text-3xl tracking-tight text-white font-semibold leading-relaxed">Dia 02</p>
+          </button>
+        </a>
+
+      </div>
+      <div class="w-full shrink-0 max-w-60 sticky top-[--header-height] hidden lg:flex flex-col" style="--header-height: 80px">
+        <div class="p-6 border-b border-white/20 flex flex-col items-start" id="table-wrapper">
+          <p class="text-sm tracking-[0.3em] uppercase text-zinc-100">Nessa página</p>
+          <div class="mt-3 flex flex-col items-start space-y-3" id="on-this-page-wrapper">
+            <!-- links will be generated by js -->
+          </div>
+        </div>
+        <div class="p-6 border-b border-white/20 flex flex-col items-start">
+          <p class="text-sm tracking-[0.3em] uppercase text-zinc-100">Social Media</p>
+          <a href="https://github.com/cristhian-fs" class="w-full" target="_blank" rel="noopener noreferrer">
+            <div class="mt-3 w-full p-3 py-4 border border-white/20 rounded-lg relative overflow-hidden transition-all hover:bg-white/10">
+              <p class="text-base text-white tracking-tight">Github</p>
+              <img src="../assets/Github.svg" class="absolute right-0 bottom-0 translate-x-[20%] translate-y-1/4 size-16" onload="SVGInject(this)" alt="">
+            </div>
+          </a>
+          <a href="https://www.instagram.com/cristhian.ui" class="w-full" target="_blank" rel="noopener noreferrer">
+            <div class="mt-3 w-full p-3 py-4 border border-white/20 rounded-lg relative overflow-hidden transition-all hover:bg-white/10">
+              <p class="text-base text-white tracking-tight">Instagram</p>
+              <img src="../assets/Instagram.svg" class="absolute right-0 bottom-0 translate-x-[20%] translate-y-1/4 size-16" onload="SVGInject(this)" alt="">
+            </div>
+          </a>
+          <a href="" class="w-full" target="_blank" rel="noopener noreferrer">
+            <div class="mt-3 w-full p-3 py-4 border border-white/20 rounded-lg relative overflow-hidden transition-all hover:bg-white/10">
+              <p class="text-base text-white tracking-tight">Whatsapp</p>
+              <img src="../assets/Whatsapp.svg" class="absolute right-0 bottom-0 translate-x-[20%] translate-y-1/4 size-16" onload="SVGInject(this)" alt="">
+            </div>
+          </a>
+          <a href="" class="w-full" target="_blank" rel="noopener noreferrer">
+            <div class="mt-3 w-full p-3 py-4 border border-white/20 rounded-lg relative overflow-hidden transition-all hover:bg-white/10">
+              <p class="text-base text-white tracking-tight">Discord</p>
+              <img src="../assets/Discord.svg" class="absolute right-0 bottom-0 translate-x-[20%] translate-y-1/4 size-16" onload="SVGInject(this)" alt="">
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="./index.js"></script>
+  <script type="module" src="../main.js"></script>
+</body>
+
+</html>

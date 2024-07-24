@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/style.css">
+  <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+  <title>Docs | Github</title>
+
+  <script src="../js/svg-inject.min.js"></script>
+</head>
+
+<body class="bg-black selection:bg-amber-600 selection:text-black">
+
+  <header class="w-full h-[--header-height] bg-black fixed top-0 left-0 flex items-center z-50 border-b border-white/10" style="--header-height: 80px">
+    <!-- inner wrapper -->
+    <div class="max-w-screen-xl w-full py-4 px-8 flex items-center justify-between mx-auto">
+      <!-- logo -->
+      <div class="text-2xl font-semibold text-white">Web Animations</div>
+      <div class="text-2xl font-semibold text-white">Menu</div>
+    </div>
+  </header>
+
+  <main class="w-full min-h-screen bg-black border-b border-white/10 relative">
+    <div class="max-w-screen-xl mx-auto mt-[--header-height] border-r border-l border-white/10 flex items-start justify-start gap-0" style="--header-height: 80px">
+      <div class="w-full shrink-0 max-w-56 sticky top-[--header-height] left-0 hidden lg:flex flex-col items-start space-y-4 py-4 px-6" style="--header-height: 80px" id="doc-links-wrapper">
+
+      </div>
+      <div class="w-full min-h-screen border-l border-r border-white/10 flex flex-col items-start">
+        <div class="w-full py-8 px-8 flex-col flex" id="doc-content-wrapper">
+          <h1 class="text-3xl md:text-6xl tracking-tight font-semibold text-white text-pretty">
+            Acesso ao Repositório no GitHub
+          </h1>
+          <p class="text-zinc-300 text-base leading-relaxed mt-6 mb-4">
+            Como parte deste projeto de aprimoramento em animações web, estou disponibilizando o código fonte e toda a estrutura do projeto em um repositório público no GitHub. Este repositório serve como um recurso adicional para aqueles que desejam explorar mais a fundo as técnicas e implementações abordadas na documentação.
+          </p>
+          <p class="text-zinc-300 text-base leading-relaxed my-4">
+            No repositório, você encontrará o código completo, dividido em diferentes etapas e módulos, refletindo o progresso diário e as melhorias contínuas ao longo dos 30 dias de estudo. Cada commit e branch foi cuidadosamente organizado para proporcionar uma experiência de aprendizado clara e estruturada. Isso permite que você acompanhe o desenvolvimento do projeto e veja como cada animação foi implementada, desde os conceitos básicos até as técnicas mais avançadas.
+          </p>
+          <h2 id="arquivo-readme" class="text-2xl md:text-5xl tracking-tight font-semibold text-white mt-12">Arquivo README</h2>
+          <p class="text-zinc-300 text-base leading-relaxed mt-6 mb-4">
+            O README do repositório oferece um guia detalhado sobre como configurar o ambiente de desenvolvimento, instalar as dependências necessárias e executar o projeto localmente. Além disso, inclui uma descrição de cada etapa do projeto, com links para a documentação relevante e exemplos práticos. Isso facilita a navegação e a compreensão do código, mesmo para aqueles que estão começando agora a explorar animações web.
+          </p>
+          <h2 id="acesso" class="text-2xl md:text-5xl tracking-tight font-semibold text-white mt-12">Acesso liberado</h2>
+          <p class="text-zinc-300 text-base leading-relaxed mt-6 mb-4">
+            Convido todos os interessados a visitar o repositório, clonar o projeto e experimentar as animações por conta própria. Sinta-se à vontade para seguir os passos do README, fazer suas próprias modificações e, se desejar, contribuir com melhorias e sugestões. Meu objetivo é criar uma comunidade de aprendizado e compartilhamento, onde possamos todos crescer e aprimorar nossas habilidades em animações web juntos.
+          </p>
+          <a href="https://github.com/web-animations/web-animations" target="_blank" class="text-zinc-300 hover:text-white flex items-center group">
+            <p class="text-base leading-relaxed">Acessar repositório</p>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 group-hover:translate-x-1 transition-all">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+            </svg>
+          </a>
+
+        </div>
+        <a href="/day1" class="w-full">
+          <button class="w-full px-8 py-16 flex flex-col gap-2 border-t border-b border-white/10" id="next-btn">
+            <div class="flex items-center justify-center max-w-fit text-zinc-300 gap-2">
+              <p class="text-base leading-relaxed">Próximo</p>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+              </svg>
+            </div>
+            <p class="text-xl md:text-3xl tracking-tight text-white font-semibold leading-relaxed">Dia 01</p>
+          </button>
+        </a>
+
+      </div>
+      <div class="w-full shrink-0 max-w-60 sticky top-[--header-height] hidden lg:flex flex-col" style="--header-height: 80px">
+        <div class="p-6 border-b border-white/20 flex flex-col items-start" id="table-wrapper">
+          <p class="text-sm tracking-[0.3em] uppercase text-zinc-100">Nessa página</p>
+          <div class="mt-3 flex flex-col items-start space-y-3" id="on-this-page-wrapper">
+            <!-- links will be generated by js -->
+          </div>
+        </div>
+        <div class="p-6 border-b border-white/20 flex flex-col items-start">
+          <p class="text-sm tracking-[0.3em] uppercase text-zinc-100">Social Media</p>
+          <a href="https://github.com/cristhian-fs" class="w-full" target="_blank" rel="noopener noreferrer">
+            <div class="mt-3 w-full p-3 py-4 border border-white/20 rounded-lg relative overflow-hidden transition-all hover:bg-white/10">
+              <p class="text-base text-white tracking-tight">Github</p>
+              <img src="../assets/Github.svg" class="absolute right-0 bottom-0 translate-x-[20%] translate-y-1/4 size-16" onload="SVGInject(this)" alt="">
+            </div>
+          </a>
+          <a href="https://www.instagram.com/cristhian.ui" class="w-full" target="_blank" rel="noopener noreferrer">
+            <div class="mt-3 w-full p-3 py-4 border border-white/20 rounded-lg relative overflow-hidden transition-all hover:bg-white/10">
+              <p class="text-base text-white tracking-tight">Instagram</p>
+              <img src="../assets/Instagram.svg" class="absolute right-0 bottom-0 translate-x-[20%] translate-y-1/4 size-16" onload="SVGInject(this)" alt="">
+            </div>
+          </a>
+          <a href="" class="w-full" target="_blank" rel="noopener noreferrer">
+            <div class="mt-3 w-full p-3 py-4 border border-white/20 rounded-lg relative overflow-hidden transition-all hover:bg-white/10">
+              <p class="text-base text-white tracking-tight">Whatsapp</p>
+              <img src="../assets/Whatsapp.svg" class="absolute right-0 bottom-0 translate-x-[20%] translate-y-1/4 size-16" onload="SVGInject(this)" alt="">
+            </div>
+          </a>
+          <a href="" class="w-full" target="_blank" rel="noopener noreferrer">
+            <div class="mt-3 w-full p-3 py-4 border border-white/20 rounded-lg relative overflow-hidden transition-all hover:bg-white/10">
+              <p class="text-base text-white tracking-tight">Discord</p>
+              <img src="../assets/Discord.svg" class="absolute right-0 bottom-0 translate-x-[20%] translate-y-1/4 size-16" onload="SVGInject(this)" alt="">
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="../main.js"></script>
+</body>
+
+</html>

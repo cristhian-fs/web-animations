@@ -1,0 +1,225 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* static fonts */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./assets/fonts/Inter-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./assets/fonts/Inter-Italic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("./assets/fonts/Inter-Medium.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url("./assets/fonts/Inter-MediumItalic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("./assets/fonts/Inter-SemiBold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url("./assets/fonts/Inter-SemiBoldItalic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "InterDisplay";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./assets/fonts/InterDisplay-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "InterDisplay";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./assets/fonts/InterDisplay-Italic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "InterDisplay";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("./assets/fonts/InterDisplay-Medium.woff2") format("woff2");
+}
+@font-face {
+  font-family: "InterDisplay";
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url("./assets/fonts/InterDisplay-MediumItalic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "InterDisplay";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("./assets/fonts/InterDisplay-SemiBold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "InterDisplay";
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url("./assets/fonts/InterDisplay-SemiBoldItalic.woff2") format("woff2");
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "InterDisplay", "Inter", sans-serif;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+#next-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+#next-btn::before {
+  --tamanho-linha: 0.5px;
+  --cor-linha: #fff;
+  --tamanho-bg: 24px;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+      var(--cor-linha) var(--tamanho-linha),
+      transparent var(--tamanho-linha),
+      transparent calc(100% - var(--tamanho-linha)),
+      var(--cor-linha) calc(100% - var(--tamanho-linha))
+    ),
+    linear-gradient(
+      90deg,
+      var(--cor-linha) var(--tamanho-linha),
+      transparent var(--tamanho-linha),
+      transparent calc(100% - var(--tamanho-linha)),
+      var(--cor-linha) calc(100% - var(--tamanho-linha))
+    );
+  background-size: var(--tamanho-bg) var(--tamanho-bg);
+  mask-image: linear-gradient(to bottom, #fff, rgba(255, 255, 255, 0));
+  opacity: 0.1;
+}
+
+#next-btn::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: #fff;
+  opacity: 1;
+  transition: 0.3s all cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+#next-btn:hover::after {
+  width: 100%;
+}
+
+#doc-links-wrapper::before {
+  content: "";
+  position: absolute;
+  top: var(--link-top, 0);
+  left: 0;
+  width: 1px;
+  height: var(--link-height, 24px);
+  background-color: #fff;
+  transition: 0.4s all cubic-bezier(0.075, 0.82, 0.165, 1);
+  opacity: 1;
+}
+
+#table-wrapper::before {
+  content: "";
+  position: absolute;
+  top: var(--content-top, 0);
+  left: 0;
+  width: 1px;
+  height: var(--content-height, 24px);
+  background-color: #fff;
+  transition: 0.4s all cubic-bezier(0.075, 0.82, 0.165, 1);
+  opacity: 1;
+}
+
+#doc-content-wrapper h2,
+#doc-content-wrapper h3,
+#doc-content-wrapper h4 {
+  scroll-margin-top: 128px;
+}
+pre {
+  margin: 0;
+  white-space: pre-wrap;
+  white-space-collapse: break-spaces;
+}
+
+pre code.hljs {
+  padding: 1rem;
+}
+
+code.hljs {
+  background: transparent !important;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}

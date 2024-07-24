@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animation add numbers</title>
+  <link rel="stylesheet" href="../../style.css">
+</head>
+
+<body>
+
+  <section class="w-screen min-h-screen bg-zinc-950 flex flex-col gap-8 items-center justify-center relative text-zinc-100">
+    <div class="flex justify-center items-center gap-8" id="buttons">
+      <button class="flex h-14 w-14 items-center justify-center rounded-full bg-zinc-800 text-xl text-zinc-200 active:scale-90" id="decrease">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+        </svg>
+      </button>
+      <div class="flex items-center justify-center" id="counter">
+        <span class="text-5xl text-semibold text-zinc-100" id="leftNumber">0</span>
+        <span class="text-5xl text-semibold text-zinc-100" id="rightNumber">0</span>
+      </div>
+      <button class="flex h-14 w-14 items-center justify-center rounded-full bg-zinc-800 text-xl text-zinc-200 active:scale-90" id="increase">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+        </svg>
+      </button>
+    </div>
+    <p class="text-lg leading-6 text-zinc-300">O número máximo é 20</p>
+  </section>
+
+  <script type="module" src="../../main.js"></script>
+  <script type="module" src="./day-2.js"></script>
+</body>
+
+</html>

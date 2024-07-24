@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/style.css">
+  <title>Web animations progress</title>
+  <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
+  <!-- svg inject -->
+  <script src="./js/svg-inject.min.js"></script>
+</head>
+
+<body class="bg-black selection:bg-amber-600 selection:text-black">
+
+  <header class="w-full h-[--header-height] bg-black fixed top-0 left-0 flex items-center z-50 border-b border-white/10" style="--header-height: 80px">
+    <!-- inner wrapper -->
+    <div class="max-w-screen-xl w-full py-4 px-8 flex items-center justify-between mx-auto">
+      <!-- logo -->
+      <div class="text-2xl font-medium text-white flex items-center max-w-fit gap-1">
+        <img src="./assets/keyframes.svg" alt="">
+        Web Animations
+      </div>
+      <div class="text-2xl font-semibold text-white">Menu</div>
+    </div>
+  </header>
+
+  <main class="w-full min-h-screen bg-black border-b border-white/10 relative">
+    <div class="max-w-screen-xl mx-auto mt-[--header-height] border-r border-l border-white/10 flex items-start justify-start gap-0" style="--header-height: 80px">
+      <div class="w-full shrink-0 max-w-56 sticky top-[--header-height] left-0 hidden lg:flex flex-col items-start space-y-4 py-4 px-6" style="--header-height: 80px" id="doc-links-wrapper">
+
+      </div>
+      <div class="w-full min-h-screen border-l border-r border-white/10 flex flex-col items-start">
+        <div class="w-full py-8 px-8 flex-col flex" id="doc-content-wrapper">
+          <h1 class="text-3xl md:text-6xl tracking-tight font-semibold text-white">
+            Animações na Web
+          </h1>
+          <p class="text-zinc-300 text-base leading-relaxed mt-6 mb-4">
+            As animações web desempenham um papel fundamental na criação de interfaces de usuário atraentes e interativas. Elas vão além da mera estética, contribuindo significativamente para a usabilidade e a experiência geral do usuário.
+          </p>
+          <p class="text-zinc-300 text-base leading-relaxed my-4">
+            Uma das principais vantagens das animações web é a capacidade de transformar experiências estáticas em dinâmicas. Quando bem executadas, as animações podem melhorar a compreensão do usuário sobre a navegação e as funcionalidades do site.
+          </p>
+          <p class="text-zinc-300 text-base leading-relaxed my-4">
+            Além disso, as animações web podem ajudar a estabelecer a identidade da marca e a comunicação visual. Uma animação bem projetada pode refletir a personalidade e os valores da marca, criando uma conexão emocional mais profunda com os usuários.
+          </p>
+          <h2 id="objetivo-principal" class="text-2xl md:text-5xl tracking-tight font-semibold text-white mt-12">Objetivo principal</h2>
+          <p class="text-zinc-300 text-base leading-relaxed mt-6 mb-4">
+            Meu principal objetivo com esta documentação de 30 dias é me capacitar a criar animações web de alta qualidade usando stacks simples, que podem ser facilmente integradas a qualquer framework ou mesmo em projetos de JavaScript puro (vanilla JS).
+          </p>
+          <p class="text-zinc-300 text-base leading-relaxed my-4">
+            Vou me concentrar na compreensão dos princípios básicos das animações, como o uso de keyframes, transições e transformações CSS, além de técnicas mais avançadas com JavaScript para criar interações mais complexas.
+          </p>
+          <h2 id="referencias-ideias" class="text-2xl md:text-5xl tracking-tight font-semibold text-white mt-12">De onde virão as referências/ideias?</h2>
+          <p class="text-zinc-300 text-base leading-relaxed mt-6 mb-4">
+            Normalmente gosto de procurar as animações em sites como <a href="" class="hover:text-white hover:underline">Awwwards</a> e <a href="" class="hover:text-white hover:underline">Godly</a>, que sempre tem sites com as melhores e mais bem avaliadas animações, e tentarei recriar algumas que eu considerar interessante, dentro da minha realidade e progresso atual.
+          </p>
+        </div>
+        <a href="/github" class="w-full">
+          <button class="w-full px-8 py-16 flex flex-col gap-2 border-t border-b border-white/10" id="next-btn">
+            <div class="flex items-center justify-center max-w-fit text-zinc-300 gap-2">
+              <p class="text-base leading-relaxed">Próximo</p>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+              </svg>
+            </div>
+            <p class="text-xl md:text-3xl tracking-tight text-white font-semibold leading-relaxed">Github</p>
+          </button>
+        </a>
+
+      </div>
+      <div class="w-full shrink-0 max-w-60 sticky top-[--header-height] hidden lg:flex flex-col" style="--header-height: 80px">
+        <div class="border-b border-white/20 flex flex-col items-start" id="table-wrapper">
+          <p class="px-4 pt-4 text-sm tracking-[0.3em] uppercase text-zinc-100">Nessa página</p>
+          <div class="mt-3 flex flex-col items-start space-y-3 p-4" id="on-this-page-wrapper">
+            <!-- links will be generated by js -->
+          </div>
+        </div>
+        <div class="p-4 border-b border-white/20 flex flex-col items-start">
+          <p class="text-sm tracking-[0.3em] uppercase text-zinc-100">Social Media</p>
+          <a href="https://github.com/cristhian-fs" class="w-full" target="_blank" rel="noopener noreferrer">
+            <div class="mt-3 w-full p-3 py-4 border border-white/20 rounded-lg relative overflow-hidden transition-all hover:bg-white/10">
+              <p class="text-base text-white tracking-tight">Github</p>
+              <img src="./assets/Github.svg" class="absolute right-0 bottom-0 translate-x-[20%] translate-y-1/4 size-16" onload="SVGInject(this)" alt="">
+            </div>
+          </a>
+          <a href="https://www.instagram.com/cristhian.ui" class="w-full" target="_blank" rel="noopener noreferrer">
+            <div class="mt-3 w-full p-3 py-4 border border-white/20 rounded-lg relative overflow-hidden transition-all hover:bg-white/10">
+              <p class="text-base text-white tracking-tight">Instagram</p>
+              <img src="./assets/Instagram.svg" class="absolute right-0 bottom-0 translate-x-[20%] translate-y-1/4 size-16" onload="SVGInject(this)" alt="">
+            </div>
+          </a>
+          <a href="" class="w-full" target="_blank" rel="noopener noreferrer">
+            <div class="mt-3 w-full p-3 py-4 border border-white/20 rounded-lg relative overflow-hidden transition-all hover:bg-white/10">
+              <p class="text-base text-white tracking-tight">Whatsapp</p>
+              <img src="./assets/Whatsapp.svg" class="absolute right-0 bottom-0 translate-x-[20%] translate-y-1/4 size-16" onload="SVGInject(this)" alt="">
+            </div>
+          </a>
+          <a href="" class="w-full" target="_blank" rel="noopener noreferrer">
+            <div class="mt-3 w-full p-3 py-4 border border-white/20 rounded-lg relative overflow-hidden transition-all hover:bg-white/10">
+              <p class="text-base text-white tracking-tight">Discord</p>
+              <img src="./assets/Discord.svg" class="absolute right-0 bottom-0 translate-x-[20%] translate-y-1/4 size-16" onload="SVGInject(this)" alt="">
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="bg-black" aria-labelledby="footer-heading">
+    <h2 id="footer-heading" class="sr-only">Footer</h2>
+    <div class="mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-8 lg:py-32">
+      <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+        <div class="text-2xl font-medium text-white flex justify-center items-start max-w-fit gap-1 xl:col-span-1">
+          <img src="./assets/keyframes.svg" class="size-8" alt="">
+          Web Animations
+        </div>
+        <div class="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
+          <div class="md:grid md:grid-cols-2 md:gap-8">
+            <div>
+              <h3 class="text-sm font-semibold leading-6 text-white">Solutions</h3>
+              <ul role="list" class="mt-6 space-y-4">
+                <li>
+                  <a href="#" class="text-sm leading-6 text-zinc-300 hover:text-white">Marketing</a>
+                </li>
+                <li>
+                  <a href="#" class="text-sm leading-6 text-zinc-300 hover:text-white">Analytics</a>
+                </li>
+                <li>
+                  <a href="#" class="text-sm leading-6 text-zinc-300 hover:text-white">Commerce</a>
+                </li>
+                <li>
+                  <a href="#" class="text-sm leading-6 text-zinc-300 hover:text-white">Insights</a>
+                </li>
+              </ul>
+            </div>
+            <div class="mt-10 md:mt-0">
+              <h3 class="text-sm font-semibold leading-6 text-white">Support</h3>
+              <ul role="list" class="mt-6 space-y-4">
+                <li>
+                  <a href="#" class="text-sm leading-6 text-zinc-300 hover:text-white">Pricing</a>
+                </li>
+                <li>
+                  <a href="#" class="text-sm leading-6 text-zinc-300 hover:text-white">Documentation</a>
+                </li>
+                <li>
+                  <a href="#" class="text-sm leading-6 text-zinc-300 hover:text-white">Guides</a>
+                </li>
+                <li>
+                  <a href="#" class="text-sm leading-6 text-zinc-300 hover:text-white">API Status</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="md:grid md:grid-cols-2 md:gap-8">
+            <div>
+              <h3 class="text-sm font-semibold leading-6 text-white">Company</h3>
+              <ul role="list" class="mt-6 space-y-4">
+                <li>
+                  <a href="#" class="text-sm leading-6 text-zinc-300 hover:text-white">About</a>
+                </li>
+                <li>
+                  <a href="#" class="text-sm leading-6 text-zinc-300 hover:text-white">Blog</a>
+                </li>
+                <li>
+                  <a href="#" class="text-sm leading-6 text-zinc-300 hover:text-white">Jobs</a>
+                </li>
+                <li>
+                  <a href="#" class="text-sm leading-6 text-zinc-300 hover:text-white">Press</a>
+                </li>
+                <li>
+                  <a href="#" class="text-sm leading-6 text-zinc-300 hover:text-white">Partners</a>
+                </li>
+              </ul>
+            </div>
+            <div class="mt-10 md:mt-0">
+              <h3 class="text-sm font-semibold leading-6 text-white">Legal</h3>
+              <ul role="list" class="mt-6 space-y-4">
+                <li>
+                  <a href="#" class="text-sm leading-6 text-zinc-300 hover:text-white">Claim</a>
+                </li>
+                <li>
+                  <a href="#" class="text-sm leading-6 text-zinc-300 hover:text-white">Privacy</a>
+                </li>
+                <li>
+                  <a href="#" class="text-sm leading-6 text-zinc-300 hover:text-white">Terms</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="./main.js"></script>
+</body>
+
+</html>
